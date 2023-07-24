@@ -1,5 +1,7 @@
-import { FunctionComponent } from "react";
-import classes from './header.module.scss'
+import { FunctionComponent, useEffect } from "react";
+import useLocalStorageState from "use-local-storage-state";
+import classes from './header.module.css'
+import { CartWidget } from "../CartWidget/CartWidget";
 
 import {
     BrowserRouter,
@@ -8,6 +10,18 @@ import {
 
 
 export const Header: FunctionComponent = () => {
+    useEffect(() => {
+        window.addEventListener("scroll", () => shrinkHeader(), false)
+        return () => {
+            window.removeEventListener("scroll", () => shrinkHeader())
+        }
+    }, []) //empty array := only once executed
+    const shrinkHeader = ()=>{
+        const distance_from_top = 140
+        const headerElement = document.querySelector("header")
+    }
+
+    var productsCount = 10
     return (
         <header className={classes.header}>
             <div>
@@ -16,7 +30,7 @@ export const Header: FunctionComponent = () => {
                 </Link>
             </div>
             <div>
-                <CartWidget productsCount = {productsCount} />
+                <CartWidget productsCount={productsCount} />
             </div>
         </header>
     )
