@@ -6,6 +6,7 @@ import "gorm.io/gorm"
 
 type Products struct {
 	gorm.Model
+	ID        int64  `json:"id"`
 	Title     string `json:"title"`
 	Price     int64  `json:"price"`
 	Thumbnail string `json:"thumbnail"`
