@@ -2,7 +2,7 @@ import { FunctionComponent, useEffect, useState } from "react";
 import classes from "./products.module.css"
 import useLocalStorageState from "use-local-storage-state";
 
-const API_URL = 'http://localhost:8080/api/getallproduct'
+const API_URL = 'https://dummyjson.com/products'
 
 export type Product = {
     id: number
@@ -66,7 +66,7 @@ export const Products: FunctionComponent = () => {
             <div className={classes.container}>
                 {products.map(product => (
                     <div className={classes.product} key={product.id} >
-                        <img src={product.thumbnail} alt={product.title} />
+                        <img width="350" height= "250" src={product.thumbnail} alt={product.title} />
                         <h3>{product.title}</h3>
                         <p> Price :  {product.price}</p>
                         <button disabled={isInCart(product.id)} onClick={() => addToCart(product)}> Add to Cart </button>
