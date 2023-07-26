@@ -32,7 +32,7 @@ export const Header: FunctionComponent = () => {
             cartWidgetElement.style.transition = "height 200ms ease-in"
             cartWidgetElement.style.height = "2rem"
             productsCountElement.style.transition = "height 200ms ease-in"
-            productsCountElement.style.fontSize = "80px"
+            productsCountElement.style.fontSize = "20px"
         } else {
             headerElement.style.height = "150px"
             logoElement.style.height = "6rem"
