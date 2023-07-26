@@ -11,16 +11,21 @@ function App() {
   return (
     // <Router>
     //   <Routes>
-        
-    // <Route path = "cartwidget" element = {<CartWidget productsCount={productsCount}/>}/>
-    // <Route path = "/" element = {<Header/>}/>
-    // <Route path = "products" element = {<Products/>}/>
-    // </Routes>
+
+    //     {/* <Route path="/cartwidget" element={<CartWidget productsCount={productsCount} />} /> */}
+    //     <Route path="/" element={<Header />} />
+
+    //     <Route path="/" element={<Products />} />
+
+    //   </Routes>
     // </Router>
-    <Products/>
-    
+    <Router>
+      <Header />
+      <Products/>
+    </Router>
+
+
   );
 }
 
 export default App;
- 
