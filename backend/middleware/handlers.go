@@ -57,7 +57,7 @@ func Database_connection() *gorm.DB {
 // Api Endpoint Handlers
 func CreateProduct(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
-	w.Header().Set("Access-Control-Allow-origin", "*")
+	w.Header().Set("Access-Control-Allow-origin", "http://localhost:3000")
 	w.Header().Set("Access-Control-Allow-Methods", "POST")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
@@ -110,7 +110,8 @@ func GetProduct(w http.ResponseWriter, r *http.Request) {
 // fetch := action of retrieving or getting the desired data from database
 func GetAllProduct(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "application/x-www-form-urlencoded")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
+	fmt.Println("frontend called here")
 
 	Products, err := getAllProduct()
 
