@@ -5,6 +5,7 @@ import { CartWidget } from './components/CartWidget/CartWidget';
 import { Header } from './components/Header/Header';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { Products } from './components/Products/Products';
+import { Cart } from './components/Cart/Cart';
 
 function App() {
   const productsCount = 10
@@ -22,6 +23,11 @@ function App() {
     <Router>
       <Header />
       <Products/>
+      <Routes>
+
+      <Route path = "/cart" element={<Cart/>} />
+      </Routes>
+      
     </Router>
 
 
